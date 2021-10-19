@@ -14,7 +14,7 @@ export class Canvas {
 
     public width() : number { return this.canvas.width }
     public height() : number { return this.canvas.height }
-    public reisze(w: number, h: number): void {
+    public resize(w: number, h: number): void {
         this.canvas.width = w
         this.canvas.height = h
     }
@@ -69,7 +69,7 @@ export function InitializeCanvas() :void {
     var fpsFilter = 50
 
     window.onresize = () => {
-        _canvas.reisze(window.innerWidth, window.innerHeight)
+        _canvas.resize(window.innerWidth, window.innerHeight)
     }
 
     setInterval(() => {
@@ -92,7 +92,6 @@ export function InitializeCanvas() :void {
             lastUpdate = now;
         }
     }, 1)
-
 }
 
 
