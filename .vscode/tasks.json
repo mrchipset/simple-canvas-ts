@@ -1,0 +1,31 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+            "label": "dev",  // Task 名称，在命令面板中显示
+            "isBackground": true,
+            "type": "npm",
+            "script": "dev",  // npm 要执行的 script 名称，对应 package.json 中的定义
+            "path": "/",  // 执行命令所在的目录，相当于 cd 命令
+            "detail": "编译至开发环境",  // Task 的描述，在命令面板中显示
+            "group": "test",
+            "problemMatcher": {
+                "owner": "typescript",
+                "fileLocation": "relative",
+                "pattern": {
+                    "regexp": "^([^\\s].*)\\((\\d+|\\,\\d+|\\d+,\\d+,\\d+,\\d+)\\):\\s+(error|warning|info)\\s+(TS\\d+)\\s*:\\s*(.*)$",
+                    "file": 1,
+                    "location": 2,
+                    "severity": 3,
+                    "code": 4,
+                    "message": 5
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": ".",
+                    "endsPattern": "Version: webpack.+"
+                }
+            }
+        }
+	]
+}
