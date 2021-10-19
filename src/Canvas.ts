@@ -20,8 +20,7 @@ export class Canvas {
     }
 
     public drawLine(pt1: Point, pt2: Point): void {
-        this.ctx.lineWidth = 1;//设置线条宽度
-        this.ctx.strokeStyle = "black";//设置线条颜色
+        this.ctx.beginPath()
         this.ctx.moveTo(pt1.x, pt1.y)
         this.ctx.lineTo(pt2.x, pt2.y)
         this.ctx.stroke()
